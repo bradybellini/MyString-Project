@@ -11,7 +11,6 @@ private:
 
 public:
 	MyString(std::string s);
-	
 	void toString();
 	
 	
