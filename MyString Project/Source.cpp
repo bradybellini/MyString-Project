@@ -5,8 +5,8 @@
 using namespace std;
 
 int main() {
-
-	MyString *s = new MyString("Brady");
-
+	string x("test");
+	MyString s(x);
+	cout << x;
 	return 0;
 }

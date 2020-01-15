@@ -5,7 +5,7 @@
 MyString::MyString(std::string s)
 {
 	array = new char[s.size()];
-	for (int i = 0; i > s.size(); i++) {
+	for (int i = 0; i < s.size(); i++) {
 		array[i] = s[i];
 	}
 
@@ -16,7 +16,7 @@ MyString::MyString(std::string s)
 
 void MyString::ensureCapacity()
 {
-	if (capacity > curr_length()) {
+	if (capacity > curr_length) {
 		return;
 	}
 
@@ -27,11 +27,15 @@ void MyString::ensureCapacity()
 	}
 	else {
 		char* temp = new char[capacity * 2];
-		for (int i = 0; i < curr_length(); i++) {
+		for (int i = 0; i < curr_length; i++) {
 			temp[i] = array[i];
 			capacity = capacity * 2;
 		}
 		delete[]array;
+		for (int i = 0; i < curr_length; i++) {
+			//this is a reference to temp, since we dont want to copy it over twice
+			array = temp;
+		}
 	}
 }
  

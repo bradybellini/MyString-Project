@@ -7,7 +7,7 @@ class MyString {
 private:
 	void ensureCapacity();
 	char *array;
-	int curr_length(), capacity;
+	int curr_length, capacity;
 
 public:
 	MyString(std::string s);
