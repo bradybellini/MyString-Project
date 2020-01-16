@@ -14,6 +14,7 @@ public:
 	MyString(std::string s);
 	void toString();
 	int length();
+	char get(int i);
 	char& operator[](const int i);
 	friend std::ostream& operator <<(std::ostream &out, const MyString &s);
 

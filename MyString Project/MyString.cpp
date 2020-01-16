@@ -1,6 +1,9 @@
 #include "MyString.h"
 
-
+//things to get help on, ostream operator <<, check that the index operators are working as intended
+// [] 
+//ask about overloading the index operator for the get method since you can already use it with an array
+//check if using an array is okay for the get method instead of using a MyString Object
 
 MyString::MyString()
 {
@@ -24,6 +27,11 @@ MyString::MyString(std::string s)
 int MyString::length()
 {
 	return curr_length;
+}
+
+char MyString::get(int i)
+{
+	return array[i];
 }
 
 char& MyString::operator[](const int i)
@@ -63,9 +71,9 @@ void MyString::ensureCapacity()
 	}
 }
 
-std::ostream& operator<<(std::ostream& out, const MyString& s)
+std::ostream& operator<<(std::ostream& out, MyString& s)
 {
-	for (int i = 0; i < s.curr_length; i++) {
-		return array[i];
+	for (int i = 0; i < s.length(); i++) {
+		return s.get(i);
 	}
 }
