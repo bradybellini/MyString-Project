@@ -70,10 +70,10 @@ void MyString::ensureCapacity()
 		}
 	}
 }
-
-std::ostream& operator<<(std::ostream& out, MyString& s)
-{
-	for (int i = 0; i < s.length(); i++) {
-		return s.get(i);
-	}
-}
+//
+//std::ostream& operator<<(std::ostream& out, MyString& s)
+//{
+//	for (int i = 0; i < s.length(); i++) {
+//		return s.get(i);
+//	}
+//}
