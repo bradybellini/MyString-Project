@@ -2,6 +2,12 @@
 
 
 
+MyString::MyString()
+{
+	curr_length = 0;
+	array = new char[0];
+}
+
 MyString::MyString(std::string s)
 {
 	array = new char[s.size()];
@@ -10,9 +16,27 @@ MyString::MyString(std::string s)
 	}
 
 	capacity = s.size();
+	curr_length = s.size();
 	//copy string to array after we just made the string.
 	//curr.length = capacity - s.size() size of string.
 }
+
+int MyString::length()
+{
+	return curr_length;
+}
+
+char& MyString::operator[](const int i)
+{
+	if (i >= 0 && i < curr_length) {
+		return array[i];
+	}
+	else {
+		exit(1);
+	}
+}
+
+
 
 void MyString::ensureCapacity()
 {
@@ -38,4 +62,10 @@ void MyString::ensureCapacity()
 		}
 	}
 }
- 
+
+std::ostream& operator<<(std::ostream& out, const MyString& s)
+{
+	for (int i = 0; i < s.curr_length; i++) {
+		return array[i];
+	}
+}
