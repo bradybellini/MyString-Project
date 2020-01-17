@@ -34,17 +34,27 @@ char MyString::get(int i)
 	return array[i];
 }
 
-char& MyString::operator[](const int i)
+char& MyString::operator[](int i)
 {
 	if (i >= 0 && i < curr_length) {
 		return array[i];
 	}
 	else {
+		std::cout << "Error: Index outside of the scope of given string." << std::endl;
 		exit(1);
 	}
 }
 
-
+char MyString::operator[](int i) const
+{
+	if (i >= 0 && i < curr_length) {
+		return array[i];
+	}
+	else {
+		std::cout << "Error: Index outside of the scope of given string." << std::endl;
+		exit(1);
+	}
+}
 
 void MyString::ensureCapacity()
 {
@@ -70,10 +80,11 @@ void MyString::ensureCapacity()
 		}
 	}
 }
-//
-//std::ostream& operator<<(std::ostream& out, MyString& s)
-//{
-//	for (int i = 0; i < s.length(); i++) {
-//		return s.get(i);
-//	}
-//}
+
+std::ostream& operator<<(std::ostream& out, const MyString& s)
+{
+	for (int i = 0; i < s.curr_length; i++) {
+		out<<s[i];
+	}
+	return out;
+}

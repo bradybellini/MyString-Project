@@ -7,8 +7,7 @@ using namespace std;
 int main() {
 	string x("Brady");
 	MyString s(x);
-	
 
-	cout << s.get(2);
+	cout << s;
 	return 0;
 }

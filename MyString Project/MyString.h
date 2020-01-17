@@ -1,6 +1,7 @@
 #pragma once
 #ifndef MYSTRING_H
 
+#include <iostream>
 #include <string>
 
 class MyString {
@@ -16,7 +17,8 @@ public:
 	int length();
 	char get(int i);
 	char& operator[](const int i);
-	friend std::ostream& operator <<(std::ostream &out, const MyString &s);
+	char operator[](const int i) const;
+	friend std::ostream& operator<<(std::ostream &out, const MyString &s);
 
 	
 
