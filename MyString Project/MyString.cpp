@@ -56,6 +56,12 @@ char MyString::operator[](int i) const
 	}
 }
 
+bool MyString::operator<(const MyString& rhs)
+{
+	if int len = length(array)
+	return false;
+}
+
 void MyString::ensureCapacity()
 {
 	if (capacity > curr_length) {
@@ -79,6 +85,15 @@ void MyString::ensureCapacity()
 			array = temp;
 		}
 	}
+}
+
+MyString MyString::operator+(const MyString& rhs)
+{
+	for (int i = 0; i < rhs.curr_length; i++) {
+		capacity = curr_length + rhs.curr_length;
+		ensureCapacity();
+	}
+	return MyString();
 }
 
 std::ostream& operator<<(std::ostream& out, const MyString& s)
