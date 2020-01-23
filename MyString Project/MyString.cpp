@@ -9,6 +9,7 @@ MyString::MyString()
 {
 	curr_length = 0;
 	array = new char[0];
+	capacity = 0;
 }
 
 MyString::MyString(std::string s)
@@ -56,11 +57,11 @@ char MyString::operator[](int i) const
 	}
 }
 
-bool MyString::operator<(const MyString& rhs)
-{
-	if int len = length(array)
-	return false;
-}
+//bool MyString::operator<(const MyString& rhs)
+//{
+//	if int len = length(array)
+//	return false;
+//}
 
 void MyString::ensureCapacity()
 {
@@ -89,10 +90,14 @@ void MyString::ensureCapacity()
 
 MyString MyString::operator+(const MyString& rhs)
 {
+
 	for (int i = 0; i < rhs.curr_length; i++) {
-		capacity = curr_length + rhs.curr_length;
 		ensureCapacity();
+		array[curr_length++] = rhs[i];
+
 	}
+	curr_length += rhs.curr_length;
+	capacity = capacity * 2;
 	return MyString();
 }
 
